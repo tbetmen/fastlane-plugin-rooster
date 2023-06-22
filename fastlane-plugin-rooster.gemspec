@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = 'muhammadmmunir24@gmail.com'
 
   spec.summary       = 'Send gitlab merge requests reminder to slack'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-rooster"
+  spec.homepage      = "https://https://github.com/tbetmen/fastlane-plugin-rooster"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
