@@ -6,12 +6,23 @@ Gemfile.lock
 /_yardoc/
 /doc/
 /rdoc/
+fastlane/Fastfile.test
 fastlane/README.md
 fastlane/report.xml
 coverage
 test-results
+/.idea/
+
+# IDE
+.idea/
+
+# Test results
+**/test*.xml
 
 ## Environment normalization:
 /.bundle/
 /vendor/bundle/*
 /lib/bundler/man/
+
+.env
+.DS_Store

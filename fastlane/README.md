@@ -13,10 +13,26 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 # Available Actions
 
-### test
+### test_env
 
 ```sh
-[bundle exec] fastlane test
+[bundle exec] fastlane test_env
+```
+
+
+
+### test_parameter
+
+```sh
+[bundle exec] fastlane test_parameter
+```
+
+
+
+### test_required_parameter
+
+```sh
+[bundle exec] fastlane test_required_parameter
 ```
 
 
