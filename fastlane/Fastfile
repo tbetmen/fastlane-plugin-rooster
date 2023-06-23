@@ -1,3 +1,23 @@
-lane :test do
-  rooster
+lane :test_env do
+  rooster_merge_request
+end
+
+lane :test_parameter do
+  rooster_merge_request(
+    gitlab_token: "secret",
+    gitlab_project_id: "123456",
+    slack_webhook_url: "https://hooks.slack.com/000/000",
+    gitlab_milestones_path: "projects/12345678",
+    gitlab_merge_request_total: 20,
+    slack_users_file: "/User/documents/slack_users.csv",
+    slack_message_format_file: "/User/documents/slack_message_format.json"
+  )
+end
+
+lane :test_required_parameter do
+  rooster_merge_request(
+    gitlab_token: "secret",
+    gitlab_project_id: "123456",
+    slack_webhook_url: "https://hooks.slack.com/000/000"
+  )
 end

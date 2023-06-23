@@ -1,0 +1,44 @@
+Naming/PredicateName:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 200
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 300
+
+Metrics/PerceivedComplexity:
+  Max: 15
+
+Metrics/ParameterLists:
+  Max: 10
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+AllCops:
+  SuggestExtensions: false
+
+Layout/BlockAlignment:
+  Exclude:
+    - './spec/rooster_merge_request_action_spec.rb'
+
+AllCops:
+  Exclude:
+    - '*.gemspec'
+    - './fastlane/*'

@@ -1,18 +1,18 @@
-lib = File.expand_path("lib", __dir__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fastlane/plugin/rooster/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-rooster'
   spec.version       = Fastlane::Rooster::VERSION
-  spec.author        = 'Muhammad M Munir'
+  spec.author        = 'Muhammad M. Munir'
   spec.email         = 'muhammadmmunir24@gmail.com'
 
   spec.summary       = 'Send gitlab merge requests reminder to slack'
-  spec.homepage      = "https://https://github.com/tbetmen/fastlane-plugin-rooster"
-  spec.license       = "MIT"
+  spec.homepage      = 'https://github.com/tbetmen/fastlane-plugin-rooster'
+  spec.license       = 'MIT'
 
-  spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
+  spec.files         = Dir['lib/**/*'] + %w(README.md LICENSE)
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 

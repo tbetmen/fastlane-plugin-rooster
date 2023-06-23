@@ -1,0 +1,7 @@
+{
+  "text": "Hello!",
+  "header": "There is MR_TOTAL merge request that need your attention in this milestone MR_MILESTONE",
+  "mr_item": "<MR_LINK|MR_TITLE> assignee MR_ASSIGNEE_SINGLE assignees MR_ASSIGNEES reviewers MR_REVIEWERS MR_TIME labels: MR_LABELS",
+  "footer": "Thank you",
+  "empty_mr_text": "Congratulation there is no merge request anymore on milestone MR_MILESTONE"
+}
