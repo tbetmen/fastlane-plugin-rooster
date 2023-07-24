@@ -16,6 +16,7 @@ module Fastlane
         gitlab_mr_total = params[:gitlab_merge_request_total] || ENV['ROOSTER_GITLAB_MERGE_REQUEST_TOTAL']
         gitlab_milestones_path = params[:gitlab_milestones_path] || ENV['ROOSTER_GITLAB_MILESTONES_PATH']
         gitlab_token = params[:gitlab_token] || ENV['ROOSTER_GITLAB_ACCESS_TOKEN']
+        milestone = params[:gitlab_merge_request_milestone] || ENV['ROOSTER_GITLAB_MERGE_REQUEST_MILESTONE']
 
         # load slack files
         slack_file_client = Helper::SlackFileClient.new
@@ -24,7 +25,11 @@ module Fastlane
 
         # get gitlab merge request
         gitlab_api = Helper::GitlabApiClient.new(gitlab_token)
-        current_milestone = gitlab_api.current_milestone(gitlab_milestones_path)
+        if milestone.empty?
+          current_milestone = gitlab_api.current_milestone(gitlab_milestones_path)
+        else
+          current_milestone = milestone
+        end
         mr_resp_json = gitlab_api.merge_requests(gitlab_project_id, gitlab_mr_total, current_milestone)
 
         # transform merge request
@@ -105,6 +110,13 @@ module Fastlane
                           '| In `header` you can use use `MR_TOTAL` and `MR_MILESTONE`'\
                           '| In `mr_item` you can use use `MR_TITLE`, `MR_TIME`, `MR_ASSIGNEE_SINGLE`, `MR_ASSIGNEES`, `MR_REVIEWERS`  `MR_LABELS`, and `MR_LINK`'\
                           '| In `empty_mr_text` you can use `MR_MILESTONE`',
+            optional: true
+          ),
+          FastlaneCore::ConfigItem.new(
+            key: :gitlab_merge_request_milestone,
+            env_name: 'ROOSTER_GITLAB_MERGE_REQUEST_MILESTONE',
+            default_value: '',
+            description: 'Milestone will be used in merge request parameter as query param',
             optional: true
           )
         ]
