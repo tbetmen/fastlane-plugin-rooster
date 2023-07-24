@@ -48,6 +48,7 @@ Here is the list of all existing parameters for `rooster_merge_request` action:
 | `gitlab_merge_request_total` | `ROOSTER_GITLAB_MERGE_REQUEST_TOTAL` | 10                                                                            | true     | Maximum merge request when fetching data from gitlab, uses in query param `per_page`                      |
 | `slack_users_file` | `ROOSTER_SLACK_USERS_FILE` | -                                                                             | true     | Comma separate file that contains mapping user of gitlab and slack using id                               |
 | `slack_message_format_file` | `ROOSTER_SLACK_MESSAGE_FORMAT_FILE` | Check in this [file](lib/fastlane/plugin/rooster/helper/slack_file_client.rb) | true     | Slack message format in json format contains `text`, `header`, `mr_item`, `footer`, and `empty_mr_text`.  |
+| `gitlab_merge_request_milestone` | `ROOSTER_GITLAB_MERGE_REQUEST_MILESTONE` | '' | true     | Milestone will be used in merge request parameter as query param.  |
 
 ## Replace word in `slack_message_format`
 
